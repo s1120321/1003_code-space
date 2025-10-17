@@ -7,5 +7,56 @@
 </head>
 <body>
     <script src="script.js"></script>
+    <button onclick="console.log('hello');">say hello</button>
+    
+    <div id="box" style="width:100px; height:100px; background:pink;"></div>
+    
+    <input type="text" id="nameInput" placeholder="輸入你的名字">
+    <p id="display"></p>
+
+    <!-- 表單區域 -->
+  <form id="myForm">
+    <input type="text" id="myInput" placeholder="輸入文字">
+    <button type="submit">送出</button>
+  </form>
+
+  <!-- 顯示結果的區域 -->
+  <p id="output"></p>
+
+  
+<script> 
+    let box = document.getElementById("box");
+
+    box.addEventListener("mouseover", () => { // 當滑鼠放到 box 上，就會變成亮藍色
+      box.style.backgroundColor = "lightblue";
+    });
+
+    box.addEventListener("mouseout", () => { // 當滑鼠移開 box 上，就會變成粉紅色
+      box.style.backgroundColor = "pink";
+    });
+
+    document.getElementById("myForm").addEventListener("submit", function(e) {
+      e.preventDefault(); // 阻止表單預設送出（避免頁面刷新）
+
+      // 取得輸入框的文字
+      let text = document.getElementById("myInput").value;
+
+      // 將文字顯示到 <p> 標籤中
+      document.getElementById("output").innerText = text;
+    });
+
+    document.getElementById("myForm").addEventListener("submit", function(e) {
+      e.preventDefault(); // 阻止表單預設送出（避免頁面刷新）
+
+      // 取得輸入框的文字
+      let text = document.getElementById("myInput").value;
+
+      // 將文字顯示到 <p> 標籤中
+      document.getElementById("output").innerText = text;
+    });
+
+
+</script>  
+
 </body>
 </html>
